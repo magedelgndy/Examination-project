@@ -1,0 +1,18 @@
+i{
+  cursor: pointer;
+  font-size: 25px;
+}
+h3{
+  text-decoration: underline;
+}
+
+.fa-plus{
+  border: 2px solid green;
+  margin-right: 35px;
+}
+
+.home{
+  min-height: 100vh;
+  padding-top: 100px;
+  background-color: #eee;
+}

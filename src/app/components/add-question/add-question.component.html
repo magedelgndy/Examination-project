@@ -1,0 +1,32 @@
+<div class="container home">
+  <h3 class="text-center mt-5">New Question</h3>
+
+  <div *ngIf="ErrorMsg!=''">
+    <p class="alert alert-danger">{{ErrorMsg}}</p>
+  </div>
+
+  <label class="label fw-bold mb-1">Question head</label>
+  <input class="form-control mb-2" required [(ngModel)]="NewQuestionData.question" [value]="NewQuestionData.question">
+
+  <label class="label text-primary fw-bold mb-1">Option 1</label>
+  <input class="form-control " required [(ngModel)]="NewQuestionData.option1" [value]="NewQuestionData.option1">
+  <label class="label text-primary fw-bold mb-1">Option 2</label>
+  <input class="form-control " required [(ngModel)]="NewQuestionData.option2" [value]="NewQuestionData.option2">
+  <label class="label text-primary fw-bold mb-1">Option 3</label>
+  <input class="form-control " required [(ngModel)]="NewQuestionData.option3" [value]="NewQuestionData.option3">
+  <label class="label text-primary fw-bold mb-1">Option 4</label>
+  <input class="form-control " required [(ngModel)]="NewQuestionData.option4" [value]="NewQuestionData.option4">
+
+  <label class="label mt-2 text-danger fw-bold mb-1">Right answer</label>
+  <select #answer class="select form-control" (change)="onSelected(answer.value)" required>
+    <option [value]="NewQuestionData.option1">{{NewQuestionData.option1}}</option>
+    <option [value]="NewQuestionData.option2">{{NewQuestionData.option2}}</option>
+    <option [value]="NewQuestionData.option3">{{NewQuestionData.option3}}</option>
+    <option [value]="NewQuestionData.option4">{{NewQuestionData.option4}}</option>
+  </select>
+
+
+  <div class="d-flex justify-content-end align-items-end mt-2">
+    <button class="btn btn-primary  mb-3" (click)="AddQuest()">Add</button>
+  </div>
+</div>

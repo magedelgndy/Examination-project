@@ -1,0 +1,101 @@
+<div class="home">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mt-5">
+          <div class="card-header">
+            <h3 class="text-center text-light">Registration</h3>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="userForm" (submit)="formDone($event)">
+              <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="firstName"
+                    id="firstName"
+                    placeholder="Enter username"
+                  />
+                  <div *ngIf="userForm.get('firstName')?.errors && userForm.get('firstName')?.touched" class="alert alert-danger py-2">
+                    <p *ngIf="userForm.get('firstName')?.getError('required')" class="mb-0">FirstName is required</p>
+                    <p *ngIf="userForm.get('firstName')?.getError('minlength')"class="mb-0">FirstName min length is 3 characters</p>
+                    <p *ngIf="userForm.get('firstName')?.getError('maxlength')"class="mb-0">FirstName max length is 10 characters</p>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName="lastName"
+                id="lastName"
+                placeholder="Enter username"
+              />
+
+              <div *ngIf="userForm.get('lastName')?.errors && userForm.get('lastName')?.touched" class="alert alert-danger py-2">
+                <p *ngIf="userForm.get('lastName')?.getError('required')" class="mb-0">LastName is required</p>
+                <p *ngIf="userForm.get('lastName')?.getError('minlength')"class="mb-0">LastName min length is 3 characters</p>
+                <p *ngIf="userForm.get('lastName')?.getError('maxlength')"class="mb-0">LastName max length is 10 characters</p>
+              </div>
+
+              </div>
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName="userName"
+                id="username"
+                placeholder="Enter username"
+              />
+
+              <div *ngIf="userForm.get('userName')?.errors && userForm.get('userName')?.touched" class="alert alert-danger py-2">
+                <p *ngIf="userForm.get('userName')?.getError('required')" class="mb-0">UserName is required</p>
+                <p *ngIf="userForm.get('userName')?.getError('minlength')"class="mb-0">UserName min length is 10 characters</p>
+              </div>
+
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                id="password"
+                placeholder="Enter password"
+                />
+
+                <div *ngIf="userForm.get('password')?.errors && userForm.get('password')?.touched" class="alert alert-danger py-2">
+                  <p *ngIf="userForm.get('password')?.getError('required')" class="mb-0">Password is required</p>
+                  <p *ngIf="userForm.get('password')?.getError('minlength')"class="mb-0">Password min length is 7 characters</p>
+                  <p *ngIf="userForm.get('password')?.getError('pattern')"class="mb-0">Password must start al least with one capital char</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="Repassword">RePassword:</label>
+                <input
+                type="password"
+                class="form-control"
+                formControlName="Repassword"
+                id="Repassword"
+                placeholder="Confirm password"
+                />
+
+                <div *ngIf="userForm.get('Repassword')?.errors && userForm.get('Repassword')?.touched" class="alert alert-danger py-2">
+                  <p *ngIf="userForm.get('Repassword')?.getError('RepasswordNotMathced')"class="mb-0">Repassword must match password</p>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary m-2 text-light" >Registration</button>
+            </form>
+
+              <div class="card-footer ">
+                <small>&copy;Examination</small>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

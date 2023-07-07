@@ -1,0 +1,66 @@
+<div class="container mt-5 cources">
+  <h2 class="mb-5 text-center">{{ ExamData.exam_name }} Exam :</h2>
+  <div
+    class="pag"
+    *ngFor="
+      let question of questions
+        | paginate
+          : {
+              itemsPerPage: 1,
+              currentPage: pagination,
+              totalItems: allquestions
+            }
+    "
+  >
+    <h3>{{ question.question }}</h3>
+    <input
+      type="radio"
+      id="1"
+      name="answer"
+      value="{{ question.options[0] }}"
+      (change)="changeScore($event, question.num)"
+      [checked]="checkForLastAnswers == 1 ? true : false"
+    />
+    <label class="ms-2" for="q1">{{ question.options[0] }}</label
+    ><br />
+
+    <input
+      type="radio"
+      id="2"
+      name="answer"
+      value="{{ question.options[1] }}"
+      (change)="changeScore($event, question.num)"
+      [checked]="checkForLastAnswers == 2 ? true : false"
+    />
+    <label class="ms-2" for="q2">{{ question.options[1] }}</label
+    ><br />
+    <input
+      type="radio"
+      id="3"
+      name="answer"
+      value="{{ question.options[2] }}"
+      (change)="changeScore($event, question.num)"
+      [checked]="checkForLastAnswers == 3 ? true : false"
+    />
+    <label class="ms-2" for="q3">{{ question.options[2] }}</label
+    ><br />
+    <input
+      type="radio"
+      id="4"
+      name="answer"
+      value="{{ question.options[3] }}"
+      (change)="changeScore($event, question.num)"
+      [checked]="checkForLastAnswers == 4 ? true : false"
+    />
+    <label class="ms-2" for="q4">{{ question.options[3] }}</label>
+  </div>
+  <div *ngIf="flag" class="d-flex justify-content-end">
+    <button class="btn btn-primary" (click)="GetScore()">Submit</button>
+  </div>
+  <div class="d-flex justify-content-center ">
+    <pagination-controls
+      (pageChange)="renderPage($event)"
+    ></pagination-controls>
+  </div>
+</div>
+

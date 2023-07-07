@@ -1,0 +1,52 @@
+.home{
+  padding-top: 50px;
+  background-color: #eee;
+  min-height: 100vh;
+}
+
+
+
+
+
+
+h2 {
+  margin-top: 40px;
+
+  font-weight: bold;
+}
+
+
+label {
+  font-weight: bold;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+textarea {
+  resize: none;
+}
+
+.btn-success {
+  background-color: #1C6140;
+  border-color: #25D366;
+  font-weight: bold;
+}
+
+.btn-success:hover {
+  background-color: #128C7E;
+  border-color: #128C7E;
+}
+
+.alert {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+p {
+  color: black;
+}
+
+.WhatsApp{
+  border-left: 3px solid #1C6140;
+  padding-top: 70px;
+}

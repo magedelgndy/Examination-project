@@ -1,0 +1,31 @@
+<div class="container mt-5 allStudents">
+  <h1
+    class="row justify-content-center mb-4 bg-dark text-light rounded p-2 fw-bold"
+  >
+    Students
+  </h1>
+  <table class="table ">
+    <thead class="thead-dark">
+      <tr>
+        <th class="text-center text-light">FirstName</th>
+        <th class="text-center text-light">Last Name</th>
+        <th class="text-center text-light">Exam Name</th>
+        <th class="text-center text-light">Grade</th>
+        <th class="text-center text-light">Delete User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-secondary fw-bold" *ngFor="let user of users; let i = index">
+        <ng-container *ngIf="user.id!=0">
+          <td class="text-center">{{ user.firstName }}</td>
+          <td class="text-center">{{ user.lastName }}</td>
+          <td class="text-center">{{ user.exam_name }}</td>
+          <td class="text-center">{{ user.grade }}</td>
+          <td class="text-center">
+            <a class="btn btn-danger" (click)="deleteUser(user.id)">Delete</a>
+          </td>
+      </ng-container>
+      </tr>
+    </tbody>
+  </table>
+</div>

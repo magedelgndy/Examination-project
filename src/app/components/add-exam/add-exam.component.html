@@ -1,0 +1,10 @@
+<div class="container home">
+  <h3>Add New Exam</h3>
+  <label class="label text-primary fw-bold mb-1">Exam Name</label>
+  <input class="form-control" [(ngModel)]="exam_name" required />
+  <div class="d-flex justify-content-end align-items-end mt-2">
+    <button class="btn btn-primary mb-5" (click)="addNewExam(exam)">
+      Add Exam
+    </button>
+  </div>
+</div>

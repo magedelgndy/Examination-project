@@ -1,0 +1,16 @@
+
+.card-header{background-color:rgb(146, 81, 119);}
+.card-body{background-color:lavenderblush;}
+.btn{
+  background-color:rgb(124, 55, 78);
+  border: none;
+}
+.card-footer{text-align: end;}
+
+.home{
+  min-height: 100vh;
+  padding-top: 50px;
+  background-color: #eee;
+
+}
+

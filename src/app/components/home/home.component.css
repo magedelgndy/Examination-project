@@ -1,0 +1,25 @@
+.home{
+  min-height: 100vh;
+  background-color: #64437d;
+  padding-top: 100px;
+
+}
+
+.headLine{
+  text-shadow: 6px 6px black;
+}
+
+.textColor{
+  color: #000;
+  font-weight: bold;
+}
+.login:hover{
+  cursor:pointer;
+  background-color: #c588f5;
+}
+
+img{
+  overflow: hidden;
+  height: 70%;
+  width: 70%;
+}

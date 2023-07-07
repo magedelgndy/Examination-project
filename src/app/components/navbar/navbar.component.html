@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4 logo"[routerLink]="['/Home']"[routerLinkActive]="['active']">Examination</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/Home']"[routerLinkActive]="['active']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/Courses']"[routerLinkActive]="['active']"*ngIf="!isAdmin && isLogged">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/Grade']"[routerLinkActive]="['active']"*ngIf="!isAdmin && isLogged">Grade</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"*ngIf="isAdmin && isLogged"[routerLink]="['/Students']">Students</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"*ngIf="isAdmin && isLogged"[routerLink]="['/Edit']">Questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/Contact']">Contact Us</a>
+        </li>
+
+      </ul>
+
+      <ul class="navbar-nav ms-auto fs-5">
+        <li class="nav-item">
+          <a class="profile nav-link disabled">{{ getUserName }}</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link" [routerLink]="['/Login']">Log In</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link" [routerLink]="['/Login']" (click)="logout()">Log Out</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

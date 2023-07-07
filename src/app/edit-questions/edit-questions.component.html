@@ -1,0 +1,32 @@
+<div class="container home">
+  <h3 class="text-center mt-5">Question {{QuestDataSperated.num}}</h3>
+
+  <div *ngIf="ErrorMsg!=''">
+    <p class="alert alert-danger">{{ErrorMsg}}</p>
+  </div>
+
+  <label class="label fw-bold">Question head</label>
+  <input class="form-control mb-2 " required [(ngModel)]="QuestDataSperated.question" [value]="QuestDataSperated.question">
+
+  <label class="label text-primary fw-bold mb-1">Option 1</label>
+  <input class="form-control " required [(ngModel)]="QuestDataSperated.option1" [value]="QuestDataSperated.option1">
+  <label class="label text-primary fw-bold mb-1">Option 2</label>
+  <input class="form-control " required [(ngModel)]="QuestDataSperated.option2" [value]="QuestDataSperated.option2">
+  <label class="label text-primary fw-bold mb-1">Option 3</label>
+  <input class="form-control " required [(ngModel)]="QuestDataSperated.option3" [value]="QuestDataSperated.option3">
+  <label class="label text-primary fw-bold mb-1">Option 4</label>
+  <input class="form-control " required [(ngModel)]="QuestDataSperated.option4" [value]="QuestDataSperated.option4">
+
+  <label class="label mt-2 text-danger fw-bold mb-1">Right answer</label>
+  <select #answer class="select form-control" (change)="onSelected(answer.value)" required>
+    <option [defaultSelected]="true" disabled>{{QuestDataSperated.answer}}</option>
+    <option [value]="QuestDataSperated.option1">{{QuestDataSperated.option1}}</option>
+    <option [value]="QuestDataSperated.option2">{{QuestDataSperated.option2}}</option>
+    <option [value]="QuestDataSperated.option3">{{QuestDataSperated.option3}}</option>
+    <option [value]="QuestDataSperated.option4">{{QuestDataSperated.option4}}</option>
+  </select>
+
+  <div class="d-flex justify-content-end align-items-end mt-2">
+    <button class="btn btn-primary  mb-5" (click)="UpdateQuest()">Update</button>
+  </div>
+</div>

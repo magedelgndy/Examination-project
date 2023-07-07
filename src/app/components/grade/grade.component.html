@@ -1,0 +1,15 @@
+
+<div class="grade">
+  <div class="container">
+
+    <h3 class="text-center mt-5">Grades:</h3>
+    <div class="text-center mt-5" *ngIf="std.grade !=null;else name">
+      <h4>Your grade in {{std.exam_name}} : {{std.grade}} </h4>
+    </div>
+
+    <ng-template #name>
+      <p class="lead text-center mt-5 alert alert-danger">There is no data for you ,Please finish your exam first.</p>
+    </ng-template>
+  </div>
+
+</div>

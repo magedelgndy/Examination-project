@@ -1,0 +1,59 @@
+<div class="home">
+  <div class="container">
+    <a class="btn btn-success px-3" (click)="addExam()">Add New Exam</a>
+    <ng-container *ngFor="let course of courses">
+      <h3 class="text-center mb-5 align-items-center">
+        {{ course.exam_name }} Exam
+      </h3>
+
+      <table class="table table-striped table-bordered border-primary">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Question</th>
+            <th scope="col">Answers</th>
+            <th scope="col">Right answer</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let q of course.questions; let i = index">
+            <tr>
+              <th rowspan="4">{{ q.num }}</th>
+              <td rowspan="4">{{ q.question }}</td>
+              <td>{{ q.options[0] }}</td>
+              <td rowspan="4">{{ q.answer }}</td>
+              <td rowspan="4" class="text-center pt-3">
+                <i
+                  class="fa-solid fa-pen-to-square text-primary d-block mb-2"
+                  (click)="editQuestion(course.id, i)"
+                ></i>
+                <i
+                  class="fa-solid fa-trash text-danger d-block"
+                  (click)="removeQuestion(course.id, i)"
+                ></i>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ q.options[1] }}</td>
+            </tr>
+            <tr>
+              <td>{{ q.options[2] }}</td>
+            </tr>
+            <tr>
+              <td>{{ q.options[3] }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end">
+        <i
+          class="fa-solid fa-plus text-success d-block mb-2"
+          (click)="addQestion(course.id)"
+        ></i>
+      </div>
+      <br />
+      <hr />
+    </ng-container>
+  </div>
+</div>
